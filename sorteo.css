@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7ddbd3,
+            #5ccbc5,
+            #8de5df
+        );
+
+    color: #173b3a;
+    padding: 35px 15px;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* ENCABEZADO */
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.icono {
+    width: 65px;
+    height: 65px;
+
+    margin: auto;
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+
+    font-size: 31px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+header h1 {
+    font-size: 42px;
+    color: #ffffff;
+
+    text-shadow:
+        0 3px 8px rgba(0,0,0,0.15);
+
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #eaffff;
+    font-size: 18px;
+}
+
+/* TARJETA PRINCIPAL */
+
+main {
+    background: rgba(255,255,255,0.96);
+
+    border-radius: 24px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.15);
+}
+
+/* DATOS */
+
+.datos {
+    margin-bottom: 32px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+    color: #245653;
+}
+
+input {
+    width: 100%;
+
+    padding: 15px 17px;
+
+    border: 2px solid #d7eeee;
+
+    border-radius: 13px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    background: #f8ffff;
+
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #53c9c1;
+
+    box-shadow:
+        0 0 0 4px rgba(83,201,193,0.15);
+}
+
+/* NUMEROS */
+
+.numeros {
+    text-align: center;
+}
+
+.ayuda {
+    color: #78918f;
+    margin-top: -8px;
+    margin-bottom: 23px;
+}
+
+/* GRID */
+
+.grid {
+    width: 90%;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(10, 1fr);
+
+    gap: 9px;
+}
+
+.numero {
+    aspect-ratio: 1 / 1;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #edf8f7;
+
+    color: #245653;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s,
+        background 0.18s,
+        color 0.18s,
+        box-shadow 0.18s;
+}
+
+.numero:hover {
+    background: #d8f3f0;
+
+    transform: translateY(-2px);
+}
+
+/* NUMERO SELECCIONADO */
+
+.numero.seleccionado {
+    background: #a7e8b0;
+
+    color: #195b2a;
+
+    box-shadow:
+        0 4px 12px rgba(76,175,80,0.25);
+
+    transform: scale(1.04);
+}
+
+/* NUMERO OCUPADO */
+
+.numero.ocupado {
+    background: #d9dddd;
+
+    color: #929999;
+
+    cursor: not-allowed;
+
+    position: relative;
+}
+
+.numero.ocupado:hover {
+    transform: none;
+}
+
+/* BOTONES */
+
+.participar {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: #52c9a0;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 5px 15px rgba(82,201,160,0.25);
+}
+
+.participar:hover {
+    background: #3db78d;
+
+    transform: translateY(-2px);
+}
+
+.btnParticipantes {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border: 2px solid #5ccbc5;
+
+    border-radius: 13px;
+
+    background: white;
+
+    color: #2d8e89;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btnParticipantes:hover {
+    background: #efffff;
+}
+
+/* TEXTO GRATIS */
+
+.gratis {
+    text-align: center;
+
+    margin-top: 17px;
+
+    color: #42a56f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+/* MENSAJES */
+
+.mensaje {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    display: none;
+}
+
+.mensaje.exito {
+    display: block;
+
+    background: #dff7e5;
+
+    color: #28783d;
+}
+
+.mensaje.error {
+    display: block;
+
+    background: #ffe3e3;
+
+    color: #a33a3a;
+}
+
+/* PARTICIPANTES */
+
+.participantes {
+    margin-top: 20px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.12);
+}
+
+.oculto {
+    display: none;
+}
+
+.tituloParticipantes {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.tituloParticipantes h2 {
+    margin: 0;
+}
+
+.tituloParticipantes button {
+    border: none;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #edf5f5;
+
+    color: #567;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+/* PERSONAS */
+
+.persona {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 13px 15px;
+
+    margin-bottom: 8px;
+
+    border-radius: 11px;
+
+    background: #f3fbfa;
+
+    border-left: 5px solid #75d5c9;
+}
+
+.persona .nombre {
+    font-weight: bold;
+}
+
+.persona .numeroElegido {
+    background: #a7e8b0;
+
+    color: #195b2a;
+
+    padding: 6px 11px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.sinParticipantes {
+    text-align: center;
+
+    color: #899;
+
+    padding: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+/* CELULAR */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    main {
+        padding: 22px 15px;
+    }
+
+    .grid {
+        width: 100%;
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        gap: 8px;
+    }
+
+    .numero {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .grid {
+        gap: 6px;
+    }
+
+    .numero {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo Gratis</title>
+    <link rel="stylesheet" href="sorteo.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <header>
+            <div class="icono">🎟️</div>
+            <h1>Sorteo Gratis</h1>
+            <p>Elegí tu número y participá</p>
+        </header>
+
+        <main>
+
+            <section class="datos">
+                <h2>Datos del participante</h2>
+
+                <label for="nombreCompleto">Nombre completo</label>
+
+                <input
+                    type="text"
+                    id="nombreCompleto"
+                    placeholder="Escribí tu nombre completo"
+                    autocomplete="name"
+                >
+            </section>
+
+            <section class="numeros">
+
+                <h2>Elegí tu número</h2>
+
+                <p class="ayuda">
+                    Seleccioná un número del 1 al 100
+                </p>
+
+                <div class="grid" id="numeros"></div>
+
+            </section>
+
+            <button class="participar" onclick="participar()">
+                Participar del sorteo
+            </button>
+
+            <button class="btnParticipantes" onclick="mostrarParticipantes()">
+                👥 Participantes
+            </button>
+
+            <p class="gratis">
+                ✓ Participación totalmente gratis
+            </p>
+
+        </main>
+
+        <div id="mensaje" class="mensaje"></div>
+
+        <section id="listaParticipantes" class="participantes oculto">
+
+            <div class="tituloParticipantes">
+                <h2>Participantes</h2>
+
+                <button onclick="cerrarParticipantes()">✕</button>
+            </div>
+
+            <div id="lista"></div>
+
+        </section>
+
+        <footer>
+            <p>🍀 ¡Mucha suerte!</p>
+        </footer>
+
+    </div>
+
+    <script src="sorteo.js"></script>
+
+</body>
+</html>
